@@ -170,6 +170,11 @@ body {
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  transition: ease 0.1s;
+}
+
+.mod-btns:hover {
+  scale: 1.08;
 }
 
 .start-btn,
@@ -177,8 +182,8 @@ body {
   background-color: hsl(204, 70%, 53%);
 }
 
-.start-btn:hover,
-.reset-btn:hover {
+.start-btn:active,
+.reset-btn:active {
   background-color: hsl(204, 70%, 43%);
 }
 
@@ -186,7 +191,7 @@ body {
   background-color: hsl(10, 80%, 57%);
 }
 
-.skip-btn:hover {
+.skip-btn:active {
   background-color: hsl(10, 80%, 47%);
 }
 
@@ -194,7 +199,7 @@ body {
   background-color: hsl(152, 68%, 42%);
 }
 
-.submit-btn:hover {
+.submit-btn:active {
   background-color: hsl(152, 68%, 32%);
 }
 

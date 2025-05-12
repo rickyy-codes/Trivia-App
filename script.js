@@ -4,9 +4,11 @@ const gamePage = document.querySelector(`.game-page`);
 const resultPage = document.querySelector(`.result-page`);
 
 // * Interactable Elements
+const startBtn = document.querySelector(`.start-btn`);
 const options = document.querySelectorAll(`.option`);
 const submitBtn = document.querySelector(`.submit-btn`);
 const skipBtn = document.querySelector(`.skip-btn`);
+const restartBtn = document.querySelector(`.reset-btn`);
 
 // * Info Displays
 const questionCount = document.querySelector(`.question-count`);
@@ -76,7 +78,24 @@ timerID = setInterval(() => {
   }
 }, 1000);
 
+startBtn.addEventListener(`click`, startGame);
+
+restartBtn.addEventListener(`click`, () => {
+  questionIndex = 0;
+  score = 0;
+  answered = 0;
+  timeElapsed = 0;
+  running = false;
+  clearInterval(timerID);
+
+  homePage.classList.add(`active-page`);
+  resultPage.classList.remove(`active-page`);
+  gamePage.classList.remove(`active-page`);
+});
+
 async function startGame() {
+  if (running) return;
+
   try {
     running = true;
     const difficulty = document.querySelector(`.difficulty-selector`).value;
@@ -165,16 +184,3 @@ function getTime() {
 
   return [minutes, seconds];
 }
-
-document.querySelector(`.reset-btn`).addEventListener(`click`, () => {
-  questionIndex = 0;
-  score = 0;
-  answered = 0;
-  timeElapsed = 0;
-  running = false;
-  clearInterval(timerID);
-
-  gamePage.classList.remove(`active-page`);
-  resultPage.classList.remove(`active-page`);
-  homePage.classList.add(`active-page`);
-});
