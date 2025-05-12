@@ -20,7 +20,7 @@ const resultTime = document.querySelector(`.time`);
 
 // * Game Variables
 let running = false;
-let questionIndex = 9;
+let questionIndex = 10;
 let score = 0;
 let answered = 0;
 let timeElapsed = 0;
