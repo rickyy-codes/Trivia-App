@@ -44,6 +44,11 @@ document.addEventListener(`DOMContentLoaded`, () => {
 
   skipBtn.addEventListener(`click`, () => {
     nextQuestion();
+    options.forEach((option) => {
+      if (option.innerHTML === quizData[questionIndex].correct_answer) {
+        option.classList.add(`correct`);
+      }
+    });
   });
 
   submitBtn.addEventListener(`click`, () => {
