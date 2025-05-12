@@ -1,0 +1,207 @@
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  background-color: hsl(0, 0%, 100%);
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: default;
+  user-select: none;
+}
+
+.main-container {
+  margin: 40px;
+  width: 38rem;
+  height: 45rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: 5px 5px 15px hsl(0, 0%, 0%, 0.5);
+  background-color: hsl(210, 22%, 96%);
+}
+
+.home-page,
+.game-page,
+.result-page {
+  width: 32rem;
+  height: 35rem;
+  gap: 8px;
+  display: none;
+}
+
+.active-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-page.active-page {
+  align-items: start;
+}
+
+.header {
+  margin-top: 40px;
+  font-size: 3rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #2b2d42, #8d99ae, #ef233c, #d90429);
+  background-clip: text;
+  color: transparent;
+}
+
+.welcome-msg,
+.result-msg {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: hsl(0, 0%, 0%, 0.8);
+}
+
+.instructions {
+  margin-top: 5px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  font-style: italic;
+  color: hsl(0, 0%, 0%, 0.8);
+}
+
+.accuracy,
+.time {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: hsl(0, 0%, 0%, 0.8);
+}
+
+.quick-settings {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: hsl(0, 0%, 0%, 0.8);
+}
+
+.difficulty-selector {
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 1.4rem;
+  text-align: center;
+  border: none;
+  border-radius: 8px;
+  color: hsl(210, 29%, 24%);
+  background-color: hsl(210, 22%, 90%);
+  cursor: pointer;
+}
+
+.difficulty-selector:hover {
+  background-color: hsl(210, 22%, 80%);
+}
+
+.info-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.question-count,
+.timer {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: hsl(0, 0%, 0%, 0.8);
+}
+
+.question {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: hsl(0, 0%, 0%, 0.9);
+}
+
+.option-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.option {
+  height: auto;
+  margin: 10px;
+  padding: 10px 0px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 15px;
+  background-color: hsl(0, 0%, 90%);
+  color: black;
+  cursor: pointer;
+}
+
+.option:hover {
+  background-color: hsl(0, 0%, 80%);
+}
+
+.option.selected {
+  background-color: hsl(204, 70%, 53%);
+  color: white;
+}
+
+.option.correct {
+  background-color: hsl(152, 68%, 42%);
+  color: white;
+}
+
+.option.incorrect {
+  background-color: hsl(10, 80%, 57%);
+  color: white;
+}
+
+.btn-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  margin: 0 auto;
+}
+
+.mod-btns {
+  margin: 20px;
+  padding: 10px 20px;
+  font-size: 2.25em;
+  font-weight: bold;
+  color: hsl(0, 0%, 100%);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.start-btn,
+.reset-btn {
+  background-color: hsl(204, 70%, 53%);
+}
+
+.start-btn:hover,
+.reset-btn:hover {
+  background-color: hsl(204, 70%, 43%);
+}
+
+.skip-btn {
+  background-color: hsl(10, 80%, 57%);
+}
+
+.skip-btn:hover {
+  background-color: hsl(10, 80%, 47%);
+}
+
+.submit-btn {
+  background-color: hsl(152, 68%, 42%);
+}
+
+.submit-btn:hover {
+  background-color: hsl(152, 68%, 32%);
+}
+
+.about {
+  margin-top: auto;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: hsl(0, 0%, 0%, 0.75);
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brainstorm</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <form class="main-container">
+      <label class="header">BRAINSTORM</label>
+      <div class="home-page">
+        <label class="welcome-msg">WELCOME TO BRAINSTORM!</label>
+        <p class="instructions">
+          🔹 There are 10 questions <br />
+          🔹 Each question has 4 options <br />
+          🔹 Skip a question if you're having trouble <br />
+        </p>
+        <div class="quick-settings">
+          <label>Difficulty:</label>
+          <select class="difficulty-selector">
+            <option value="easy">EASY</option>
+            <option value="medium">MEDIUM</option>
+            <option value="hard">HARD</option>
+          </select>
+        </div>
+        <button type="button" class="start-btn mod-btns" onclick="startGame()">START</button>
+      </div>
+      <div class="game-page">
+        <div class="info-container">
+          <label class="question-count">Question: 1 of 10</label>
+          <label class="timer">00:00</label>
+        </div>
+        <label class="question">(Question) Lorem ipsum dolor sit amet consectetur adipisicing elit. </label>
+        <div class="option-container">
+          <button type="button" class="option">Option A</button>
+          <button type="button" class="option">Option B</button>
+          <button type="button" class="option">Option C</button>
+          <button type="button" class="option">Option D</button>
+        </div>
+        <div class="btn-container">
+          <button type="button" class="skip-btn mod-btns">SKIP</button>
+          <button type="button" class="submit-btn mod-btns">SUBMIT</button>
+        </div>
+      </div>
+      <div class="result-page">
+        <label class="result-msg">YOU SCORED 0 OUT OF 10!</label>
+        <label class="accuracy">Accuracy: 0%</label>
+        <label class="time">Time Taken: 0 minutes 0 seconds</label>
+        <button type="button" class="reset-btn mod-btns">RESTART</button>
+      </div>
+      <span class="about">Made by Trishaan</span>
+    </form>
+    <script src="script.js"></script>
+  </body>
+</html>
