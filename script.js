@@ -75,6 +75,21 @@ document.addEventListener(`DOMContentLoaded`, () => {
 
     nextQuestion();
   });
+
+  startBtn.addEventListener(`click`, startGame);
+
+  restartBtn.addEventListener(`click`, () => {
+    questionIndex = 0;
+    score = 0;
+    answered = 0;
+    timeElapsed = 0;
+    running = false;
+    clearInterval(timerID);
+
+    homePage.classList.add(`active-page`);
+    resultPage.classList.remove(`active-page`);
+    gamePage.classList.remove(`active-page`);
+  });
 });
 
 timerID = setInterval(() => {
@@ -88,21 +103,6 @@ timerID = setInterval(() => {
     return;
   }
 }, 1000);
-
-startBtn.addEventListener(`click`, startGame);
-
-restartBtn.addEventListener(`click`, () => {
-  questionIndex = 0;
-  score = 0;
-  answered = 0;
-  timeElapsed = 0;
-  running = false;
-  clearInterval(timerID);
-
-  homePage.classList.add(`active-page`);
-  resultPage.classList.remove(`active-page`);
-  gamePage.classList.remove(`active-page`);
-});
 
 async function startGame() {
   if (running) return;
@@ -171,11 +171,9 @@ function nextQuestion() {
     }, 1000);
   }
 
-  options.forEach((option) => {
-    option.disabled = true;
-    submitBtn.disabled = true;
-    skipBtn.disabled = true;
-  });
+  options.forEach((option) => (option.disabled = true));
+  submitBtn.disabled = true;
+  skipBtn.disabled = true;
 
   setTimeout(() => {
     questionIndex++;
