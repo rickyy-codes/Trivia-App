@@ -45,9 +45,10 @@ document.addEventListener(`DOMContentLoaded`, () => {
   skipBtn.addEventListener(`click`, () => {
     nextQuestion();
     options.forEach((option) => {
-      if (option.innerHTML === quizData[questionIndex].correct_answer) {
-        option.classList.add(`correct`);
-      }
+      const correctOption = Array.from(options).find(
+        (option) => option.innerHTML == quizData[questionIndex].correct_answer
+      );
+      correctOption.classList.add(`correct`);
     });
   });
 
@@ -64,13 +65,10 @@ document.addEventListener(`DOMContentLoaded`, () => {
 
     if (selectedOption === correctOption) {
       selectedOption.classList.add(`correct`);
-      selectedOption.classList.remove(`incorrect`);
       score++;
       answered++;
     } else {
-      selectedOption.classList.remove(`correct`);
       selectedOption.classList.add(`incorrect`);
-
       correctOption.classList.add(`correct`);
       answered++;
     }
