@@ -53,11 +53,16 @@ document.addEventListener(`DOMContentLoaded`, () => {
 
   submitBtn.addEventListener(`click`, () => {
     const selectedOption = Array.from(options).find((option) => option.classList.contains("selected"));
+    const correctOption = Array.from(options).find(
+      (option) => option.innerHTML == quizData[questionIndex].correct_answer
+    );
+
     if (!selectedOption) {
       console.error(`No options selected`);
       return;
     }
-    if (selectedOption.innerHTML === quizData[questionIndex].correct_answer) {
+
+    if (selectedOption === correctOption) {
       selectedOption.classList.add(`correct`);
       selectedOption.classList.remove(`incorrect`);
       score++;
@@ -65,8 +70,11 @@ document.addEventListener(`DOMContentLoaded`, () => {
     } else {
       selectedOption.classList.remove(`correct`);
       selectedOption.classList.add(`incorrect`);
+
+      correctOption.classList.add(`correct`);
       answered++;
     }
+
     nextQuestion();
   });
 });
