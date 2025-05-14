@@ -154,6 +154,11 @@ body {
   color: white;
 }
 
+.rickroll {
+  font-size: 1.5rem;
+  color: hsl(204, 70%, 43%);
+}
+
 .btn-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
